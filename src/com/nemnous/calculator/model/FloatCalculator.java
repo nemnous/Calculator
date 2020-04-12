@@ -3,10 +3,23 @@ package com.nemnous.calculator.model;
 import com.nemnous.calculator.exceptions.InvalidArgumentsException;
 import com.nemnous.calculator.interfaces.Calculable;
 
+
+/**
+ * This class implements the Calculable Interface.
+ * This class handles operations performed on float values.
+ * @author nemnous.
+ *
+ */
 public class FloatCalculator implements Calculable<Float> {
 	
 	public static final String REG_EX = "[+-]?([0-9]*[.])?[0-9]+";
 
+	/**
+	 * This method adds the values from given Parameter Object.
+	 * @param operands for addition operations are given as object.
+	 * @throws InvalidArgumentsExeption if user enters values other
+	 * than float or empty operands.
+	 */
 	@Override
 	public Float add(Parameter param) {
 		String operandA = param.getOperandA();
@@ -22,7 +35,13 @@ public class FloatCalculator implements Calculable<Float> {
 		float arg2 = Float.parseFloat(operandB);
 		return  arg1 + arg2;
 	}
-
+	
+	/**
+	 * This method subtracts the values from given Parameter Object.
+	 * @param operands for substraction operations are given as object.
+	 * @throws InvalidArgumentsExeption if user enters values other
+	 * than float or empty operands.
+	 */
 	@Override
 	public Float subtract(Parameter param) {
 		String operandA = param.getOperandA();
@@ -38,7 +57,13 @@ public class FloatCalculator implements Calculable<Float> {
 		float arg2 = Float.parseFloat(operandB);
 		return  arg1 - arg2;
 	}
-
+	
+	/**
+	 * This method multiplies the values from given Parameter Object.
+	 * @param operands for multiply operations are given as object.
+	 * @throws InvalidArgumentsExeption if user enters values other
+	 * than float or empty operands.
+	 */
 	@Override
 	public Float multiply(Parameter param) {
 		String operandA = param.getOperandA();
@@ -54,7 +79,13 @@ public class FloatCalculator implements Calculable<Float> {
 		float arg2 = Float.parseFloat(operandB);
 		return  arg1 * arg2;
 	}
-
+	
+	/**
+	 * This method divides the values from given Parameter Object.
+	 * @param operands for divide operations are given as object.
+	 * @throws InvalidArgumentsExeption if user enters values other
+	 * than float or empty operands or when operandB is set to zero.
+	 */
 	@Override
 	public Float divide(Parameter param) {
 		String operandA = param.getOperandA();
