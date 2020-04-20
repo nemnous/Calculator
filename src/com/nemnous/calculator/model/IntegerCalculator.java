@@ -31,9 +31,7 @@ public class IntegerCalculator implements Calculable<Integer> {
 			throw new InvalidArgumentsException("Exceeds size of int");
 		}
 		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments can't be Empty.");
-		}
+		
 		int arg1 = Integer.parseInt(operandA);
 		int arg2 = Integer.parseInt(operandB);
 		return  arg1 + arg2;
@@ -54,10 +52,6 @@ public class IntegerCalculator implements Calculable<Integer> {
 		}
 		if(operandA.length() > 9 || operandB.length() > 9) {
 			throw new InvalidArgumentsException("Exceeds size of int");
-		}
-		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments can't be Empty.");
 		}
 		int arg1 = Integer.parseInt(operandA);
 		int arg2 = Integer.parseInt(operandB);
@@ -80,10 +74,6 @@ public class IntegerCalculator implements Calculable<Integer> {
 		if(operandA.length() > 9 || operandB.length() > 9) {
 			throw new InvalidArgumentsException("Exceeds the size of int");
 		}
-		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments cannot be Empty.");
-		}
 		int arg1 = Integer.parseInt(operandA);
 		int arg2 = Integer.parseInt(operandB);
 		return  arg1 * arg2;
@@ -105,10 +95,6 @@ public class IntegerCalculator implements Calculable<Integer> {
 		}
 		if(operandA.length() > 9 || operandB.length() > 9) {
 			throw new InvalidArgumentsException("Exceeds the size of int");
-		}
-		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments cannot be Empty.");
 		}
 		int arg1 = Integer.parseInt(operandA);
 		int arg2 = Integer.parseInt(operandB);

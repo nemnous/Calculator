@@ -27,10 +27,6 @@ public class FloatCalculator implements Calculable<Float> {
 		if (!operandA.matches(REG_EX) || !operandB.matches(REG_EX)) {
 			throw new InvalidArgumentsException("Enter float values only");
 		}
-		
-		if( operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments can't be Empty.");
-		}
 		float arg1 = Float.parseFloat(operandA);
 		float arg2 = Float.parseFloat(operandB);
 		return  arg1 + arg2;
@@ -48,10 +44,6 @@ public class FloatCalculator implements Calculable<Float> {
 		String operandB = param.getOperandB();
 		if (!operandA.matches(REG_EX) || !operandB.matches(REG_EX)) {
 			throw new InvalidArgumentsException("Enter float values only");
-		}
-		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments can't be Empty.");
 		}
 		float arg1 = Float.parseFloat(operandA);
 		float arg2 = Float.parseFloat(operandB);
@@ -72,9 +64,6 @@ public class FloatCalculator implements Calculable<Float> {
 			throw new InvalidArgumentsException("Enter Float values only");
 		}
 		
-		if( operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments cannot be Empty.");
-		}
 		float arg1 = Float.parseFloat(operandA);
 		float arg2 = Float.parseFloat(operandB);
 		return  arg1 * arg2;
@@ -94,9 +83,6 @@ public class FloatCalculator implements Calculable<Float> {
 			throw new InvalidArgumentsException("Enter Float values only");
 		}
 		
-		if( operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments cannot be Empty.");
-		}
 		float arg1 = Float.parseFloat(operandA);
 		float arg2 = Float.parseFloat(operandB);
 		if(arg2 == 0) {

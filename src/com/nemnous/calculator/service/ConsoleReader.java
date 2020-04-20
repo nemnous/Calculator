@@ -39,8 +39,9 @@ public class ConsoleReader implements InputReader {
 		logger.log(Level.INFO, INFO_MESSAGE);
 		do {
 			equation = scan.nextLine();
-			Parameter param = inputParser.parseInput(equation);
+			Parameter param = null;
 			try {
+				param = inputParser.parseInput(equation);
 				switch(param.getOperator()) {
 				case "+":
 					output = integerCalculator.add(param);
@@ -62,17 +63,21 @@ public class ConsoleReader implements InputReader {
 					logger.log(Level.INFO, OUTPUT_FORMAT, output);
 					history.add(param.toString() + " : " + output);
 					continue;
+				case "h":
+					showHistory();
+					continue;
 				default:
-					if(equation.equalsIgnoreCase("h"))
-						showHistory();
-					else
-						logger.log(Level.WARNING, "Enter valid Equation");
-				}	
+					continue;
+				}
 			} catch (InvalidArgumentsException | ArithmeticException exception) {
 				logger.log(Level.WARNING, exception.getMessage());
-				history.add(param.toString() + " : " + exception.getMessage());
+				String logOutput;
+				if(param != null)
+					logOutput = param.toString();
+				else
+					logOutput = "InvalidInput";
+				history.add(logOutput + " : " + exception.getMessage());
 			}
-
 		} while(!equation.equals("end"));
 	}
 
@@ -86,8 +91,9 @@ public class ConsoleReader implements InputReader {
 		float output;
 		do {
 			equation = scan.nextLine();
-			Parameter param = inputParser.parseInput(equation);
+			Parameter param = null;
 			try {
+				param = inputParser.parseInput(equation);
 				switch(param.getOperator()) {
 				case "+":
 					output = floatCalculator.add(param);
@@ -109,17 +115,20 @@ public class ConsoleReader implements InputReader {
 					logger.log(Level.INFO, OUTPUT_FORMAT, output);
 					history.add(param.toString() + " : " + output);
 					continue;
+				case "h":
+					showHistory();
+					continue;
 				default:
-					if(equation.equalsIgnoreCase("h"))
-						showHistory();
-					else {
-						logger.log(Level.WARNING, "Enter Valid equation");
-					}
 					continue;
 				}
 			} catch (InvalidArgumentsException exception) {
 				logger.log(Level.WARNING, exception.getMessage());
-				history.add(param.toString() + " : " + exception.getMessage());
+				String logOutput;
+				if(param != null)
+					logOutput = param.toString();
+				else
+					logOutput = "Invalid Input";
+				history.add(logOutput + " : " + exception.getMessage());
 			}
 
 		} while(!equation.equals("end"));
@@ -135,8 +144,9 @@ public class ConsoleReader implements InputReader {
 		double output;
 		do {
 			equation = scan.nextLine();
-			Parameter param = inputParser.parseInput(equation);
+			Parameter param = null;
 			try {
+				param = inputParser.parseInput(equation);
 				switch(param.getOperator()) {
 				case "+":
 					output = doubleCalculator.add(param);
@@ -158,17 +168,20 @@ public class ConsoleReader implements InputReader {
 					logger.log(Level.INFO, OUTPUT_FORMAT, output);
 					history.add(param.toString() + " : " + output);
 					continue;
+				case "h":
+					showHistory();
+					continue;
 				default:
-					if(equation.equalsIgnoreCase("h"))
-						showHistory();
-					else {
-						logger.log(Level.WARNING, "Enter Valid Equation");
-					}
 					continue;
 				}
 			} catch (InvalidArgumentsException exception) {
 				logger.log(Level.WARNING, exception.getMessage());
-				history.add(param.toString() + " : " + exception.getMessage());
+				String logOutput;
+				if(param != null)
+					logOutput = param.toString();
+				else
+					logOutput = "Invalid Input";
+				history.add(logOutput + " : " + exception.getMessage());
 			}
 
 		} while(!equation.equals("end"));

@@ -3,7 +3,7 @@ package com.nemnous.calculator.service;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+import com.nemnous.calculator.exceptions.InvalidArgumentsException;
 import com.nemnous.calculator.model.Parameter;
 
 /**
@@ -118,7 +118,9 @@ public class InputParser {
 			return parseAddition(equation);
 		}else if(equation.contains("-")) {
 			return parseSubtraction(equation);
+		}else if(equation.equalsIgnoreCase("h")) {
+			return new Parameter("", "", "h");
 		}
-		return new Parameter("", "", "");
+		throw new InvalidArgumentsException("Arguments can't be Empty.");
 	}
 }

@@ -27,9 +27,6 @@ public class DoubleCalculator implements Calculable<Double> {
 			throw new InvalidArgumentsException("Enter Double value only");
 		}
 		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments can't be Empty.");
-		}
 		Double arg1 = Double.parseDouble(operandA);
 		Double arg2 = Double.parseDouble(operandB);
 		return  arg1 + arg2;
@@ -49,9 +46,6 @@ public class DoubleCalculator implements Calculable<Double> {
 			throw new InvalidArgumentsException("Enter Double values only");
 		}
 		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments can't be Empty.");
-		}
 		Double arg1 = Double.parseDouble(operandA);
 		Double arg2 = Double.parseDouble(operandB);
 		return  arg1 - arg2;
@@ -70,10 +64,6 @@ public class DoubleCalculator implements Calculable<Double> {
 		if (!operandA.matches(REG_EX) || !operandB.matches(REG_EX)) {
 			throw new InvalidArgumentsException("Enter Double value only");
 		}
-		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments cannot be Empty.");
-		}
 		Double arg1 = Double.parseDouble(operandA);
 		Double arg2 = Double.parseDouble(operandB);
 		return  arg1 * arg2;
@@ -91,10 +81,6 @@ public class DoubleCalculator implements Calculable<Double> {
 		String operandB = param.getOperandB();
 		if (!operandA.matches(REG_EX) || !operandB.matches(REG_EX)) {
 			throw new InvalidArgumentsException("Enter Double values only");
-		}
-		
-		if(operandA.equals("") || operandB.equals("")) {
-			throw new InvalidArgumentsException("Arguments cannot be Empty.");
 		}
 		Double arg1 = Double.parseDouble(operandA);
 		Double arg2 = Double.parseDouble(operandB);
