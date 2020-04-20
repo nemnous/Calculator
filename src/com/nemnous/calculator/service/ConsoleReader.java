@@ -75,7 +75,7 @@ public class ConsoleReader implements InputReader {
 				if(param != null)
 					logOutput = param.toString();
 				else
-					logOutput = "InvalidInput";
+					logOutput = equation;
 				history.add(logOutput + " : " + exception.getMessage());
 			}
 		} while(!equation.equals("end"));
@@ -127,7 +127,7 @@ public class ConsoleReader implements InputReader {
 				if(param != null)
 					logOutput = param.toString();
 				else
-					logOutput = "Invalid Input";
+					logOutput = equation;
 				history.add(logOutput + " : " + exception.getMessage());
 			}
 
@@ -180,7 +180,7 @@ public class ConsoleReader implements InputReader {
 				if(param != null)
 					logOutput = param.toString();
 				else
-					logOutput = "Invalid Input";
+					logOutput = equation;
 				history.add(logOutput + " : " + exception.getMessage());
 			}
 
