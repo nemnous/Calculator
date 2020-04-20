@@ -1,8 +1,5 @@
 package com.nemnous.calculator.service;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.nemnous.calculator.exceptions.InvalidArgumentsException;
 import com.nemnous.calculator.model.Parameter;
 
@@ -14,8 +11,6 @@ import com.nemnous.calculator.model.Parameter;
  *
  */
 public class InputParser {
-	private final Logger logger =
-			Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private static final String MESSAGE = "Invalid Operands"; 
 
 	/**
@@ -38,8 +33,7 @@ public class InputParser {
 			paramB = input[1].trim();
 		}
 		if(paramA.equals("") || input.length<2) {
-			logger.log(Level.WARNING, MESSAGE);
-			return new Parameter("", "", "");
+			throw new InvalidArgumentsException(MESSAGE);
 		}
 		return new Parameter(paramA , paramB, "+");
 	}
@@ -65,8 +59,7 @@ public class InputParser {
 			paramB = input[1].trim();
 		}
 		if(paramA.equals("") || input.length<2) {
-			logger.log(Level.WARNING, MESSAGE);
-			return new Parameter("", "", "");
+			throw new InvalidArgumentsException(MESSAGE);
 		}
 		return new Parameter(paramA , paramB, "-");
 	}
@@ -81,8 +74,7 @@ public class InputParser {
 	public Parameter parseMultiplication(String equation) {
 		String[] input = equation.split("\\*");
 		if(input[0].trim().equals("") || input.length<2) {
-			logger.log(Level.WARNING, MESSAGE);
-			return new Parameter("", "", "");
+			throw new InvalidArgumentsException(MESSAGE);
 		}
 		return new Parameter(input[0].trim() , input[1].trim(), "*");
 	}
@@ -96,8 +88,7 @@ public class InputParser {
 	public Parameter parseDivison(String equation) {
 		String[] input = equation.split("/");
 		if(input[0].trim().equals("") || input.length<2) {
-			logger.log(Level.WARNING, MESSAGE);
-			return new Parameter("", "", "");
+			throw new InvalidArgumentsException(MESSAGE);
 		}
 		return new Parameter(input[0].trim() , input[1].trim(), "/");
 	}
